@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Monarch Platform Team - Building the Foundation for Red Hat OpenShift AI">
+    <meta name="theme-color" content="#0066CC">
+    <title>Monarch Platform Team | RHOAI Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Masthead -->
+    <header class="masthead">
+        <div class="masthead-brand">
+            <button class="sidebar-toggle" aria-label="Toggle sidebar" aria-expanded="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <div class="masthead-logo">M</div>
+            <span class="masthead-title">Monarch Platform Team</span>
+        </div>
+        <div class="masthead-actions">
+            <a href="https://github.com/opendatahub-io/odh-dashboard" class="masthead-link" target="_blank">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                GitHub
+            </a>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <ul class="sidebar-nav">
+            <li class="sidebar-item">
+                <a href="#hero" class="sidebar-link active">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    Home
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#about" class="sidebar-link">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    About
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#metrics" class="sidebar-link">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                    Impact
+                </a>
+            </li>
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-section-title">Projects</div>
+            <li class="sidebar-item">
+                <a href="#kubeflow" class="sidebar-link">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    </svg>
+                    Kubeflow
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#rhoai-features" class="sidebar-link">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                    RHOAI Features
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#integrations" class="sidebar-link">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                        <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                        <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                        <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                    </svg>
+                    Integrations
+                </a>
+            </li>
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-section-title">Technical</div>
+            <li class="sidebar-item">
+                <a href="#architecture" class="sidebar-link">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    Architecture
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#timeline" class="sidebar-link">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    Timeline
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#initiatives" class="sidebar-link">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                    </svg>
+                    Initiatives
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#value" class="sidebar-link">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    Value
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <div class="hero-badge animate-fade-up">
+                    <span class="hero-badge-dot"></span>
+                    Platform Engineering Team
+                </div>
+                <h1 class="hero-title animate-fade-up delay-1">
+                    Building the <span class="hero-title-highlight">Foundation</span> for RHOAI
+                </h1>
+                <p class="hero-subtitle animate-fade-up delay-2">
+                    Transforming the Dashboard from a monolith into a scalable, modular platform that accelerates feature delivery across 10+ teams.
+                </p>
+                <div class="hero-cta animate-fade-up delay-3">
+                    <a href="#metrics" class="btn btn-primary">See Our Impact</a>
+                    <a href="https://github.com/opendatahub-io/odh-dashboard" class="btn btn-secondary" target="_blank">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        View on GitHub
+                    </a>
+                </div>
+                <div class="hero-stats animate-fade-up delay-4">
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">10+</div>
+                        <div class="hero-stat-label">Teams Enabled</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">5+</div>
+                        <div class="hero-stat-label">Federated Modules</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">4</div>
+                        <div class="hero-stat-label">Kubeflow Projects</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section" id="about">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">What is Monarch?</h2>
+                <p class="section-subtitle animate-on-scroll">The Platform Engineering team within Red Hat OpenShift AI Dashboard</p>
+                <div class="about-grid">
+                    <div class="about-card animate-on-scroll">
+                        <div class="about-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                        </div>
+                        <h3>Modular Architecture</h3>
+                        <p>We built a micro-frontend platform using Webpack Module Federation, enabling 10+ teams to develop and deploy independently.</p>
+                    </div>
+                    <div class="about-card animate-on-scroll">
+                        <div class="about-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <h3>Platform Engineering</h3>
+                        <p>We drive cross-cutting improvements including Turbo monorepo, developer experience, and quality automation.</p>
+                    </div>
+                    <div class="about-card animate-on-scroll">
+                        <div class="about-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4"></path>
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                        </div>
+                        <h3>Quality Engineering</h3>
+                        <p>We own QE infrastructure including nightly AI-powered test analysis, parallel PR testing clusters, Bodies of Water release strategy, and quality gates enforcement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metrics Section -->
+        <section class="section section-alt" id="metrics">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Our Impact</h2>
+                <p class="section-subtitle animate-on-scroll">Enabling teams to deliver faster</p>
+                <div class="metrics-grid">
+                    <div class="metric-card animate-on-scroll">
+                        <div class="metric-value" data-target="10">0</div>
+                        <div class="metric-suffix">+</div>
+                        <div class="metric-label">Teams Enabled</div>
+                        <div class="metric-description">Feature teams developing independently</div>
+                    </div>
+                    <div class="metric-card animate-on-scroll">
+                        <div class="metric-value" data-target="4">0</div>
+                        <div class="metric-label">Kubeflow Projects</div>
+                        <div class="metric-description">UI contributions to open source</div>
+                    </div>
+                    <div class="metric-card animate-on-scroll">
+                        <div class="metric-value" data-target="5">0</div>
+                        <div class="metric-suffix">+</div>
+                        <div class="metric-label">Federated Modules</div>
+                        <div class="metric-description">Independent micro-frontends in production</div>
+                    </div>
+                    <div class="metric-card animate-on-scroll">
+                        <div class="metric-value" data-target="2">0</div>
+                        <div class="metric-label">External Integrations</div>
+                        <div class="metric-description">Third-party tools (Perses, MLflow)</div>
+                    </div>
+                </div>
+                <div class="metrics-secondary">
+                    <div class="metric-pill animate-on-scroll">
+                        <span class="pill-value">Turbo</span>
+                        <span class="pill-label">Monorepo</span>
+                    </div>
+                    <div class="metric-pill animate-on-scroll">
+                        <span class="pill-value">Shared</span>
+                        <span class="pill-label">Configs</span>
+                    </div>
+                    <div class="metric-pill animate-on-scroll">
+                        <span class="pill-value">Fast</span>
+                        <span class="pill-label">Hot Reload</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kubeflow Contributions -->
+        <section class="section" id="kubeflow">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Enabling Kubeflow Contributions</h2>
+                <p class="section-subtitle animate-on-scroll">We enable other teams to contribute UI components to the Kubeflow open-source project with PatternFly theming for Material UI compatibility</p>
+                <div class="kubeflow-grid">
+                    <div class="kubeflow-card animate-on-scroll">
+                        <div class="kubeflow-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            </svg>
+                        </div>
+                        <h3>Model Registry</h3>
+                        <p class="kubeflow-status status-live">Live</p>
+                        <p>Complete UI for ML model versioning, metadata tracking, and lifecycle management with Go BFF.</p>
+                        <a href="https://github.com/kubeflow/model-registry" class="kubeflow-link" target="_blank">View Repository</a>
+                    </div>
+                    <div class="kubeflow-card animate-on-scroll">
+                        <div class="kubeflow-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                            </svg>
+                        </div>
+                        <h3>Model Catalog</h3>
+                        <p class="kubeflow-status status-live">Live</p>
+                        <p>Curated model discovery with filters, performance benchmarks, and one-click deployment.</p>
+                        <a href="https://github.com/kubeflow/model-registry" class="kubeflow-link" target="_blank">View Repository</a>
+                    </div>
+                    <div class="kubeflow-card animate-on-scroll">
+                        <div class="kubeflow-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2a10 10 0 0 0-7.35 16.76 10 10 0 0 0 14.7 0A10 10 0 0 0 12 2z"></path>
+                                <path d="M12 8v8"></path>
+                                <path d="M8 12h8"></path>
+                            </svg>
+                        </div>
+                        <h3>Model MCP</h3>
+                        <p class="kubeflow-status status-upcoming">Coming Soon</p>
+                        <p>MCP server integration for AI models, enabling standardized agent interactions.</p>
+                        <span class="kubeflow-link disabled">In Development</span>
+                    </div>
+                    <div class="kubeflow-card animate-on-scroll">
+                        <div class="kubeflow-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            </svg>
+                        </div>
+                        <h3>Notebooks</h3>
+                        <p class="kubeflow-status status-live">Live</p>
+                        <p>Jupyter workbench management with hardware profiles, connections, and lifecycle tracking.</p>
+                        <a href="https://github.com/kubeflow/kubeflow" class="kubeflow-link" target="_blank">View Repository</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RHOAI Features -->
+        <section class="section section-alt" id="rhoai-features">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Enabling RHOAI Features</h2>
+                <p class="section-subtitle animate-on-scroll">Full modular architecture modules powering core RHOAI capabilities</p>
+                <div class="integrations-grid">
+                    <div class="integration-card animate-on-scroll">
+                        <div class="integration-logo">
+                            <span class="integration-letter">G</span>
+                        </div>
+                        <h3>GenAI Studio</h3>
+                        <p>Complete AI experimentation platform with <strong>full BFF implementation</strong>. Enables users to create projects, run experiments, track metrics with MLflow integration, and manage the complete generative AI development lifecycle within RHOAI.</p>
+                    </div>
+                    <div class="integration-card animate-on-scroll">
+                        <div class="integration-logo">
+                            <span class="integration-letter">M</span>
+                        </div>
+                        <h3>MaaS (Models as a Service)</h3>
+                        <p>First full modular architecture module deployed to production with <strong>complete Go BFF</strong>. Provides model serving management, endpoint configuration, and scaling controls for deploying ML models as managed services.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- External Integrations -->
+        <section class="section section-accent" id="integrations">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">External Integrations</h2>
+                <p class="section-subtitle animate-on-scroll">Our modular architecture enables seamless third-party integration via proxy patterns</p>
+                <div class="integrations-grid">
+                    <div class="integration-card animate-on-scroll">
+                        <div class="integration-logo">
+                            <span class="integration-letter">P</span>
+                        </div>
+                        <h3>Perses</h3>
+                        <p>Integrated via <strong>proxy service architecture</strong> (no BFF). The observability package proxies to the data-science-perses Kubernetes service, rendering Perses dashboards natively within RHOAI for real-time metrics on model serving, GPU utilization, and inference latency.</p>
+                    </div>
+                    <div class="integration-card animate-on-scroll">
+                        <div class="integration-logo">
+                            <span class="integration-letter">M</span>
+                        </div>
+                        <h3>MLflow</h3>
+                        <p>Integrated via <strong>iframe embedding and proxy endpoints</strong> (no BFF). The /mlflow proxy routes to the MLflow service, allowing users to track experiments, compare model runs, and manage ML lifecycle directly within the Dashboard.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture Section -->
+        <section class="section" id="architecture">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Architecture Overview</h2>
+                <p class="section-subtitle animate-on-scroll">How our modular platform works</p>
+
+                <div class="architecture-diagram animate-on-scroll">
+                    <div class="arch-layer arch-host">
+                        <div class="arch-label">Host Dashboard</div>
+                        <div class="arch-description">RHOAI Dashboard orchestrates all modules</div>
+                    </div>
+                    <div class="arch-arrow"></div>
+                    <div class="arch-layer arch-modules">
+                        <div class="arch-label">Federated Modules (with BFF)</div>
+                        <div class="arch-modules-grid">
+                            <div class="arch-module" data-tooltip="Model versioning - has Go BFF">Model Registry</div>
+                            <div class="arch-module" data-tooltip="AI experimentation - has Go BFF">GenAI Studio</div>
+                            <div class="arch-module" data-tooltip="Models as a Service - has Go BFF">MaaS</div>
+                            <div class="arch-module" data-tooltip="Jupyter workbenches - has Go BFF">Notebooks 2.0</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow"></div>
+                    <div class="arch-layer arch-proxy">
+                        <div class="arch-label">Proxy Integrations (no BFF)</div>
+                        <div class="arch-modules-grid">
+                            <div class="arch-module" data-tooltip="Observability - proxy to Perses service">Perses</div>
+                            <div class="arch-module" data-tooltip="Experiment tracking - iframe/proxy">MLflow</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow"></div>
+                    <div class="arch-layer arch-k8s">
+                        <div class="arch-label">Kubernetes / OpenShift</div>
+                        <div class="arch-description">CRDs, operators, and platform resources</div>
+                    </div>
+                </div>
+
+                <div class="architecture-features">
+                    <div class="arch-feature animate-on-scroll">
+                        <h4>Module Federation</h4>
+                        <p>Webpack 5 feature enabling micro-frontends to share code at runtime</p>
+                    </div>
+                    <div class="arch-feature animate-on-scroll">
+                        <h4>Type-Safe Contracts</h4>
+                        <p>OpenAPI specs with generated TypeScript and Go code</p>
+                    </div>
+                    <div class="arch-feature animate-on-scroll">
+                        <h4>Flexible Integration</h4>
+                        <p>Full BFF for K8s access, or simple proxy for external tools</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="section section-alt" id="timeline">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Our Journey</h2>
+                <p class="section-subtitle animate-on-scroll">Key milestones in building the modular platform</p>
+
+                <div class="timeline">
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2025 Q2</div>
+                            <h3>Module Federation Adoption</h3>
+                            <p>Implemented Webpack Module Federation in ODH Dashboard, establishing the micro-frontend architecture.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2025 Q2</div>
+                            <h3>mod-arch-library v1.0</h3>
+                            <p>Released the shared library with core utilities, UI components, and theming for ODH, RHOAI, and Kubeflow.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2025 Q2</div>
+                            <h3>Turbo Monorepo Transformation</h3>
+                            <p>Converted to Turbo-powered monorepo with shared ESLint, TypeScript, and Jest configurations.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2025 Q2-Q3</div>
+                            <h3>PatternFly Material UI Theme</h3>
+                            <p>Created theming overlay enabling PatternFly components to visually match Material UI for Kubeflow adoption.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2025 Q3</div>
+                            <h3>QE Infrastructure</h3>
+                            <p>Deployed GitHub Actions e2e pipeline, PR cluster infrastructure, nightly AI test analysis, and Bodies of Water release strategy.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2025 Q4</div>
+                            <h3>MaaS & GenAI Deployment</h3>
+                            <p>First full modular architecture modules deployed to production with complete BFF implementation.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2025 Q4 - 2026 Q1</div>
+                            <h3>Perses Integration</h3>
+                            <p>Observability dashboards integrated via proxy service architecture for real-time ML workload monitoring.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2026 Q1 (Planned)</div>
+                            <h3>Independent Pod Deployments</h3>
+                            <p>Modules will deploy as separate Kubernetes deployments, scaling independently.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2026 Q1 (Planned)</div>
+                            <h3>Clusterless Development</h3>
+                            <p>Full development workflow without requiring a live Kubernetes cluster (currently upstream only).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Initiatives Section -->
+        <section class="section" id="initiatives">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Current Initiatives</h2>
+                <p class="section-subtitle animate-on-scroll">What we're working on now</p>
+
+                <div class="initiatives-grid">
+                    <div class="initiative-card animate-on-scroll">
+                        <div class="initiative-status status-progress">In Progress</div>
+                        <h3>BFF Intercommunication</h3>
+                        <p>Enabling GenAI and MaaS BFFs to communicate securely for cross-module features.</p>
+                    </div>
+                    <div class="initiative-card animate-on-scroll">
+                        <div class="initiative-status status-progress">In Progress</div>
+                        <h3>Quality Gates Enforcement</h3>
+                        <p>Automated quality checks as build gates for all modular architecture modules.</p>
+                    </div>
+                    <div class="initiative-card animate-on-scroll">
+                        <div class="initiative-status status-progress">In Progress</div>
+                        <h3>Agentic AI Testing</h3>
+                        <p>AI-powered test generation with Cursor rules for unit, mock, and contract tests.</p>
+                    </div>
+                    <div class="initiative-card animate-on-scroll">
+                        <div class="initiative-status status-progress">In Progress</div>
+                        <h3>Perses Dashboard Integration</h3>
+                        <p>Full end-to-end observability implementation in RHOAI Dashboard.</p>
+                    </div>
+                    <div class="initiative-card animate-on-scroll">
+                        <div class="initiative-status status-planned">Planned Q1 2026</div>
+                        <h3>Independent Pod Deployments</h3>
+                        <p>Modules deploy as separate Kubernetes deployments with independent scaling.</p>
+                    </div>
+                    <div class="initiative-card animate-on-scroll">
+                        <div class="initiative-status status-planned">Planned Q1 2026</div>
+                        <h3>Clusterless Development</h3>
+                        <p>Mock mode enabling full development workflow without live Kubernetes cluster.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Value Section -->
+        <section class="section section-alt" id="value">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Strategic Value</h2>
+                <p class="section-subtitle animate-on-scroll">Why our platform matters</p>
+                <div class="value-grid">
+                    <div class="value-card animate-on-scroll">
+                        <h3>For Feature Teams</h3>
+                        <ul>
+                            <li>Ship independently without blocking other teams</li>
+                            <li>Own your module with full control over frontend and BFF</li>
+                            <li>Shared foundations with common utilities and configs</li>
+                            <li>Quality confidence with automated gates</li>
+                        </ul>
+                    </div>
+                    <div class="value-card animate-on-scroll">
+                        <h3>For the Organization</h3>
+                        <ul>
+                            <li>Faster delivery with parallel development</li>
+                            <li>Reduced risk with isolated deployments</li>
+                            <li>Community contribution via upstream-first approach</li>
+                            <li>Partner enablement via Module Federation</li>
+                        </ul>
+                    </div>
+                    <div class="value-card animate-on-scroll">
+                        <h3>For Customers</h3>
+                        <ul>
+                            <li>Better UX with cohesive experience</li>
+                            <li>Faster features reaching production</li>
+                            <li>Reliability with graceful failure handling</li>
+                            <li>Built-in observability via Perses</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <span class="logo-icon">M</span>
+                        <span class="logo-text">Monarch Platform Team</span>
+                    </div>
+                    <div class="footer-links">
+                        <a href="https://github.com/opendatahub-io/odh-dashboard" target="_blank">GitHub</a>
+                        <a href="https://github.com/opendatahub-io/mod-arch-library" target="_blank">mod-arch-library</a>
+                        <a href="https://github.com/kubeflow/model-registry" target="_blank">Model Registry</a>
+                    </div>
+                    <div class="footer-contact">
+                        <p>Slack: #wg-dashboard-monarch</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>Red Hat OpenShift AI</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
