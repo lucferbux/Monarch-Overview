@@ -1069,6 +1069,29 @@ body {
     line-height: 1.5;
 }
 
+/* Timeline Release Badge */
+.timeline-content {
+    position: relative;
+}
+
+.timeline-badge {
+    position: absolute;
+    top: var(--pf-v6-spacer-sm);
+    right: var(--pf-v6-spacer-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #004D99 100%);
+    color: white;
+    font-size: var(--pf-v6-font-size-xs);
+    font-weight: 600;
+    border-radius: var(--pf-v6-border-radius-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
 /* Initiatives Grid */
 .initiatives-grid {
     display: grid;
