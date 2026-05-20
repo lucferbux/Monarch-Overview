@@ -118,6 +118,14 @@
                 </a>
             </li>
             <li class="sidebar-item">
+                <a href="#rhoai-35" class="sidebar-link">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                    </svg>
+                    RHOAI 3.5
+                </a>
+            </li>
+            <li class="sidebar-item">
                 <a href="#initiatives" class="sidebar-link">
                     <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
@@ -176,6 +184,10 @@
                     <div class="hero-stat">
                         <div class="hero-stat-value">4</div>
                         <div class="hero-stat-label">Modules Shipped (3.4)</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">113+</div>
+                        <div class="hero-stat-label">Story Points (3.5)</div>
                     </div>
                 </div>
             </div>
@@ -709,8 +721,202 @@
             </div>
         </section>
 
+        <!-- RHOAI 3.5 Section -->
+        <section class="section" id="rhoai-35">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">RHOAI 3.5: What's Next</h2>
+                <p class="section-subtitle animate-on-scroll">From modular modules to deployment independence — four coordinated initiatives transforming how the Dashboard deploys, scales, and evolves</p>
+
+                <div class="initiatives-grid">
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #0066CC;">
+                        <div class="initiative-status status-progress">In Progress</div>
+                        <h3>Operator Module Onboarding</h3>
+                        <p>Dashboard transitions from a component managed by the central ODH Operator to a <strong>standalone operator module</strong> with its own Kubernetes controller and Custom Resource Definition. Manifest changes deploy same-day through Dashboard CI/CD instead of waiting 1-2 weeks for operator release cycles. The operator self-heals — configuration drift is auto-corrected.</p>
+                        <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="background: #E8F0FE; color: #0066CC; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">44 story points</span>
+                            <a href="https://issues.redhat.com/browse/RHOAIENG-47771" target="_blank" style="background: #F3F4F6; color: #6B7280; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; text-decoration: none;">RHOAIENG-47771</a>
+                        </div>
+                    </div>
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #0066CC;">
+                        <div class="initiative-status status-progress">In Progress</div>
+                        <h3>Independent Pod Deployments</h3>
+                        <p>Each module backend moves from a shared pod (8 containers, coupled fate) to its <strong>own independent deployment</strong> with dedicated scaling, permissions, and failure isolation. A crash in one module no longer takes down the entire Dashboard. Each module scales based on its own load and gets least-privilege security permissions.</p>
+                        <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="background: #E8F0FE; color: #0066CC; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">45 story points</span>
+                            <a href="https://issues.redhat.com/browse/RHOAIENG-58968" target="_blank" style="background: #F3F4F6; color: #6B7280; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; text-decoration: none;">RHOAIENG-58968</a>
+                        </div>
+                    </div>
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #8B5CF6;">
+                        <div class="initiative-status status-progress">In Progress</div>
+                        <h3>Go BFF Foundation (Phase 0)</h3>
+                        <p>A common Go backend-for-frontend is being co-built with <strong>Pewter and Crimson teams</strong>. Delivers shared authentication, Kubernetes client infrastructure, and security middleware. This begins the migration from Fastify (Node.js) to unified Go — 57 stories, ~213 points total across 8 phases.</p>
+                        <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="background: #EDE9FE; color: #8B5CF6; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">24 story points</span>
+                            <span style="background: #FEF3C7; color: #92400E; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">Multi-team</span>
+                            <a href="https://issues.redhat.com/browse/RHOAIENG-60028" target="_blank" style="background: #F3F4F6; color: #6B7280; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; text-decoration: none;">RHOAIENG-60028</a>
+                        </div>
+                    </div>
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #10B981;">
+                        <div class="initiative-status status-planned">Proposed</div>
+                        <h3>Agent Eval Harness</h3>
+                        <p>A lightweight measurement system that checks every PR for compliance with established conventions and tracks improvement trends over time. Answers the question: <strong>"Is our AI development investment paying off?"</strong> — with deterministic compliance scoring, not subjective assessment.</p>
+                        <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="background: #D1FAE5; color: #065F46; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">Proposal phase</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- What This Unlocks -->
+                <div style="margin-top: 48px;">
+                    <h3 class="animate-on-scroll" style="font-size: 1.5rem; margin-bottom: 8px; color: #1F2937;">What This Unlocks</h3>
+                    <p class="animate-on-scroll" style="color: #6B7280; margin-bottom: 24px;">These initiatives are stages of a single platform evolution. Combined, they enable capabilities the organization has been waiting on.</p>
+                    <div class="about-grid">
+                        <div class="about-card animate-on-scroll">
+                            <div class="about-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M2 12h20"></path>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                </svg>
+                            </div>
+                            <h3>New Environments</h3>
+                            <p>Platform providers for environments outside RHOAI/ODH — starting with xKC (non-OpenShift Kubernetes). The dashboard is no longer locked to a single platform.</p>
+                        </div>
+                        <div class="about-card animate-on-scroll">
+                            <div class="about-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                            </div>
+                            <h3>Clusterless Development</h3>
+                            <p>Real local development with just the app shell, main BFF, and the modules you need — no cluster required. Dramatically faster development cycles.</p>
+                        </div>
+                        <div class="about-card animate-on-scroll">
+                            <div class="about-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="8.5" cy="7" r="4"></circle>
+                                    <line x1="20" y1="8" x2="20" y2="14"></line>
+                                    <line x1="23" y1="11" x2="17" y2="11"></line>
+                                </svg>
+                            </div>
+                            <h3>Component Onboarding</h3>
+                            <p>External teams can onboard new modules without waiting on Monarch. The operator and CRD handle deployment, scaling, and lifecycle automatically.</p>
+                        </div>
+                        <div class="about-card animate-on-scroll">
+                            <div class="about-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                            </div>
+                            <h3>Module Tech Previews</h3>
+                            <p>Ship modules in preview mode, enable/disable them per environment via CRD configuration. New modules can be tested in production without risk to the core dashboard.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Before/After Metrics -->
+                <div style="margin-top: 48px;">
+                    <h3 class="animate-on-scroll" style="font-size: 1.5rem; margin-bottom: 8px; color: #1F2937;">Operational Improvements</h3>
+                    <p class="animate-on-scroll" style="color: #6B7280; margin-bottom: 24px;">Measurable before-and-after improvements across key operational metrics</p>
+                    <div class="metrics-grid" style="grid-template-columns: repeat(3, 1fr);">
+                        <div class="metric-card animate-on-scroll">
+                            <div class="metric-label" style="font-size: 0.85em; color: #6B7280;">Deploy Time</div>
+                            <div style="margin: 8px 0;">
+                                <span style="color: #EF4444; text-decoration: line-through; font-size: 1.1em;">1-2 weeks</span>
+                            </div>
+                            <div class="metric-value" style="font-size: 1.8rem; color: #10B981;">Same day</div>
+                        </div>
+                        <div class="metric-card animate-on-scroll">
+                            <div class="metric-label" style="font-size: 0.85em; color: #6B7280;">Failure Blast Radius</div>
+                            <div style="margin: 8px 0;">
+                                <span style="color: #EF4444; text-decoration: line-through; font-size: 1.1em;">Full outage</span>
+                            </div>
+                            <div class="metric-value" style="font-size: 1.8rem; color: #10B981;">1 module</div>
+                        </div>
+                        <div class="metric-card animate-on-scroll">
+                            <div class="metric-label" style="font-size: 0.85em; color: #6B7280;">Recovery (MTTR)</div>
+                            <div style="margin: 8px 0;">
+                                <span style="color: #EF4444; text-decoration: line-through; font-size: 1.1em;">~2 min (all)</span>
+                            </div>
+                            <div class="metric-value" style="font-size: 1.8rem; color: #10B981;">~30s</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div style="margin-top: 48px;">
+                    <h3 class="animate-on-scroll" style="font-size: 1.5rem; margin-bottom: 8px; color: #1F2937;">Release Timeline</h3>
+                    <div class="timeline" style="margin-top: 24px;">
+                        <div class="timeline-item animate-on-scroll">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-badge">RHOAI 3.5 EA1</span>
+                                <div class="timeline-date">June 16, 2026</div>
+                                <h3>Conditional Module Enablement</h3>
+                                <p>Modules can be individually enabled/disabled at runtime based on feature flags and DSC components. 22 story points.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item animate-on-scroll">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-badge">RHOAI 3.5 EA2</span>
+                                <div class="timeline-date">July 14, 2026</div>
+                                <h3>Operator Integration + CRD</h3>
+                                <p>Dashboard Module Operator managing current topology with full CRD design, Go controller, and handler registration. 28 story points.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item animate-on-scroll">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-badge">RHOAI 3.5 GA</span>
+                                <div class="timeline-date">August 25, 2026</div>
+                                <h3>Independent Pods + Migration</h3>
+                                <p>All 7 BFF modules in their own deployments with independent lifecycle. Zero-downtime migration from operator-managed to module-managed. 61 story points.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Multi-team -->
+                <div style="margin-top: 48px;">
+                    <h3 class="animate-on-scroll" style="font-size: 1.5rem; margin-bottom: 8px; color: #1F2937;">Multi-Team Enablement</h3>
+                    <p class="animate-on-scroll" style="color: #6B7280; margin-bottom: 24px;">5 engineers accelerating 5+ teams</p>
+                    <div class="about-grid" style="grid-template-columns: repeat(5, 1fr);">
+                        <div class="about-card animate-on-scroll" style="text-align: center; padding: 20px 12px;">
+                            <h3 style="font-size: 1rem; margin-bottom: 4px;">Pewter</h3>
+                            <p style="font-size: 0.85em; margin: 0; color: #8B5CF6; font-weight: 500;">Co-builder</p>
+                            <p style="font-size: 0.8em; margin-top: 8px;">Non-OpenShift K8s compatibility</p>
+                        </div>
+                        <div class="about-card animate-on-scroll" style="text-align: center; padding: 20px 12px;">
+                            <h3 style="font-size: 1rem; margin-bottom: 4px;">Crimson</h3>
+                            <p style="font-size: 0.85em; margin: 0; color: #8B5CF6; font-weight: 500;">Co-builder</p>
+                            <p style="font-size: 0.8em; margin-top: 8px;">Shared auth & K8s client</p>
+                        </div>
+                        <div class="about-card animate-on-scroll" style="text-align: center; padding: 20px 12px;">
+                            <h3 style="font-size: 1rem; margin-bottom: 4px;">Connections</h3>
+                            <p style="font-size: 0.85em; margin: 0; color: #0066CC; font-weight: 500;">Consumer</p>
+                            <p style="font-size: 0.8em; margin-top: 8px;">S3/URI/OCI testing</p>
+                        </div>
+                        <div class="about-card animate-on-scroll" style="text-align: center; padding: 20px 12px;">
+                            <h3 style="font-size: 1rem; margin-bottom: 4px;">Purple-scrum</h3>
+                            <p style="font-size: 0.85em; margin: 0; color: #0066CC; font-weight: 500;">Consumer</p>
+                            <p style="font-size: 0.8em; margin-top: 8px;">FileExplorer/S3 browser</p>
+                        </div>
+                        <div class="about-card animate-on-scroll" style="text-align: center; padding: 20px 12px;">
+                            <h3 style="font-size: 1rem; margin-bottom: 4px;">Platform</h3>
+                            <p style="font-size: 0.85em; margin: 0; color: #10B981; font-weight: 500;">Provider</p>
+                            <p style="font-size: 0.8em; margin-top: 8px;">Operator framework</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Current Initiatives Section -->
-        <section class="section" id="initiatives">
+        <section class="section section-alt" id="initiatives">
             <div class="container">
                 <h2 class="section-title animate-on-scroll">Current Initiatives</h2>
                 <p class="section-subtitle animate-on-scroll">What we're working on now</p>
