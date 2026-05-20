@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Monarch Platform Team - Building the Foundation for Red Hat OpenShift AI">
+    <meta name="theme-color" content="#0066CC">
+    <title>Monarch Platform Team | RHOAI Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Masthead -->
+    <header class="masthead">
+        <div class="masthead-brand">
+            <button class="sidebar-toggle" aria-label="Toggle sidebar" aria-expanded="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <div class="masthead-logo">M</div>
+            <span class="masthead-title">Monarch Platform Team</span>
+        </div>
+        <div class="masthead-actions">
+            <a href="https://github.com/opendatahub-io/odh-dashboard" class="masthead-link" target="_blank">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                GitHub
+            </a>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <ul class="sidebar-nav">
+            <li class="sidebar-item">
+                <a href="#hero" class="sidebar-link active">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    Home
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#about" class="sidebar-link">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    About
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#metrics" class="sidebar-link">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                    Impact
+                </a>
+            </li>
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-section-title">Projects</div>
+            <li class="sidebar-item">
+                <a href="#kubeflow" class="sidebar-link">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    </svg>
+                    Kubeflow
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#rhoai-features" class="sidebar-link">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                    RHOAI Features
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#integrations" class="sidebar-link">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                        <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                        <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                        <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                    </svg>
+                    Integrations
+                </a>
+            </li>
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-section-title">Technical</div>
+            <li class="sidebar-item">
+                <a href="#architecture" class="sidebar-link">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    Architecture
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#timeline" class="sidebar-link">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    Timeline
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#initiatives" class="sidebar-link">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                    </svg>
+                    Initiatives
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#value" class="sidebar-link">
+                    <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    Value
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <div class="hero-badge animate-fade-up">
+                    <span class="hero-badge-dot"></span>
+                    Dashboard Enabling Team
+                </div>
+                <h1 class="hero-title animate-fade-up delay-1">
+                    Building the <span class="hero-title-highlight">Foundation</span> for RHOAI
+                </h1>
+                <p class="hero-subtitle animate-fade-up delay-2">
+                    The modular platform powering RHOAI Dashboard — enabling 10+ teams to ship independently. Now driving AI-assisted development, independent pod deployments, and the Main BFF architecture with partner teams.
+                </p>
+                <div class="hero-cta animate-fade-up delay-3">
+                    <a href="#metrics" class="btn btn-primary">See Our Impact</a>
+                    <a href="https://github.com/opendatahub-io/odh-dashboard" class="btn btn-secondary" target="_blank">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        View on GitHub
+                    </a>
+                </div>
+                <div class="hero-stats animate-fade-up delay-4">
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">10+</div>
+                        <div class="hero-stat-label">Teams Enabled</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">14+</div>
+                        <div class="hero-stat-label">Federated Modules</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">4</div>
+                        <div class="hero-stat-label">Kubeflow Projects</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">4</div>
+                        <div class="hero-stat-label">Modules Shipped (3.4)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section" id="about">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">What is Monarch?</h2>
+                <p class="section-subtitle animate-on-scroll">The Platform Engineering team within Red Hat OpenShift AI Dashboard</p>
+                <div class="about-grid">
+                    <div class="about-card animate-on-scroll">
+                        <div class="about-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                        </div>
+                        <h3>Modular Architecture</h3>
+                        <p>We built a micro-frontend platform using Webpack Module Federation, enabling 10+ teams to develop and deploy independently.</p>
+                    </div>
+                    <div class="about-card animate-on-scroll">
+                        <div class="about-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <h3>Platform Engineering</h3>
+                        <p>We drive cross-cutting improvements including Turbo monorepo, developer experience, and quality automation.</p>
+                    </div>
+                    <div class="about-card animate-on-scroll">
+                        <div class="about-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4"></path>
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                        </div>
+                        <h3>Quality Engineering</h3>
+                        <p>We own QE infrastructure including nightly AI-powered test analysis, parallel PR testing clusters, Bodies of Water release strategy, and quality gates enforcement.</p>
+                    </div>
+                    <div class="about-card animate-on-scroll">
+                        <div class="about-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <h3>AI-Powered Development</h3>
+                        <p>AI PR Reviews, automated triage, and Ambient Code Platform adopted across 25 packages. Standardized SDLC workflows enable agentic development with structured rules and guardrails.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metrics Section -->
+        <section class="section section-alt" id="metrics">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Our Impact</h2>
+                <p class="section-subtitle animate-on-scroll">Enabling teams to deliver faster</p>
+                <div class="metrics-grid">
+                    <div class="metric-card animate-on-scroll">
+                        <div class="metric-value" data-target="10">0</div>
+                        <div class="metric-suffix">+</div>
+                        <div class="metric-label">Teams Enabled</div>
+                        <div class="metric-description">Feature teams developing independently</div>
+                    </div>
+                    <div class="metric-card animate-on-scroll">
+                        <div class="metric-value" data-target="14">0</div>
+                        <div class="metric-suffix">+</div>
+                        <div class="metric-label">Federated Modules</div>
+                        <div class="metric-description">Independent micro-frontends in production</div>
+                    </div>
+                    <div class="metric-card animate-on-scroll">
+                        <div class="metric-value" data-target="4">0</div>
+                        <div class="metric-label">Modules Shipped (3.4 GA)</div>
+                        <div class="metric-description">AutoML, AutoRAG, Eval-Hub, MLflow — live in production</div>
+                    </div>
+                    <div class="metric-card animate-on-scroll">
+                        <div class="metric-value" data-target="53">0</div>
+                        <div class="metric-suffix">%</div>
+                        <div class="metric-label">Agent-Ready Score</div>
+                        <div class="metric-description">AI-assisted development readiness</div>
+                    </div>
+                </div>
+                <div class="metrics-secondary">
+                    <div class="metric-pill animate-on-scroll">
+                        <span class="pill-value">Turbo</span>
+                        <span class="pill-label">Monorepo</span>
+                    </div>
+                    <div class="metric-pill animate-on-scroll">
+                        <span class="pill-value">Ambient</span>
+                        <span class="pill-label">Adoption</span>
+                    </div>
+                    <div class="metric-pill animate-on-scroll">
+                        <span class="pill-value">25</span>
+                        <span class="pill-label">Packages</span>
+                    </div>
+                    <div class="metric-pill animate-on-scroll">
+                        <span class="pill-value">Agentic</span>
+                        <span class="pill-label">Ready</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kubeflow Contributions -->
+        <section class="section" id="kubeflow">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Leading Kubeflow Development</h2>
+                <p class="section-subtitle animate-on-scroll">Red Hat leads development upstream in Kubeflow, championing PatternFly themed as MUI as a valid component library</p>
+
+                <!-- Community Contribution Highlight -->
+                <div class="community-highlight animate-on-scroll">
+                    <div class="community-stats-grid">
+                        <div class="community-stat">
+                            <div class="community-stat-value">PatternFly</div>
+                            <div class="community-stat-label">MUI Theme Accepted</div>
+                            <div class="community-stat-desc">PatternFly themed as MUI accepted as valid upstream library</div>
+                        </div>
+                        <div class="community-stat">
+                            <div class="community-stat-value">1,700+</div>
+                            <div class="community-stat-label">Contributions</div>
+                            <div class="community-stat-desc">Red Hat team contributions to Kubeflow</div>
+                        </div>
+                        <div class="community-stat">
+                            <div class="community-stat-value">Top 3</div>
+                            <div class="community-stat-label">Contributors</div>
+                            <div class="community-stat-desc">In Kubeflow project (past year)</div>
+                        </div>
+                    </div>
+                    <div class="contributor-list">
+                        <div class="contributor-item">
+                            <span class="contributor-name">Eder Ignatowicz</span>
+                            <span class="contributor-commits">1,239 commits</span>
+                        </div>
+                        <div class="contributor-item">
+                            <span class="contributor-name">Lucas Fernandez</span>
+                            <span class="contributor-commits">434 commits</span>
+                        </div>
+                        <div class="contributor-item">
+                            <span class="contributor-name">Jenny</span>
+                            <span class="contributor-commits">61 commits</span>
+                        </div>
+                    </div>
+                    <a href="https://insights.linuxfoundation.org/project/kubeflow/contributors" class="community-link" target="_blank">
+                        View on LFX Insights →
+                    </a>
+                </div>
+                <div class="kubeflow-grid">
+                    <div class="kubeflow-card animate-on-scroll">
+                        <div class="kubeflow-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            </svg>
+                        </div>
+                        <h3>Model Registry</h3>
+                        <p class="kubeflow-status status-live">Live</p>
+                        <p>Complete UI for ML model versioning, metadata tracking, and lifecycle management with Go BFF.</p>
+                        <a href="https://github.com/kubeflow/model-registry" class="kubeflow-link" target="_blank">View Repository</a>
+                    </div>
+                    <div class="kubeflow-card animate-on-scroll">
+                        <div class="kubeflow-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                            </svg>
+                        </div>
+                        <h3>Model Catalog</h3>
+                        <p class="kubeflow-status status-live">Live</p>
+                        <p>Curated model discovery with filters, performance benchmarks, and one-click deployment.</p>
+                        <a href="https://github.com/kubeflow/model-registry" class="kubeflow-link" target="_blank">View Repository</a>
+                    </div>
+                    <div class="kubeflow-card animate-on-scroll">
+                        <div class="kubeflow-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2a10 10 0 0 0-7.35 16.76 10 10 0 0 0 14.7 0A10 10 0 0 0 12 2z"></path>
+                                <path d="M12 8v8"></path>
+                                <path d="M8 12h8"></path>
+                            </svg>
+                        </div>
+                        <h3>MCP Catalog</h3>
+                        <p class="kubeflow-status status-upcoming">Coming Soon</p>
+                        <p>MCP server integration for AI models, enabling standardized agent interactions.</p>
+                        <span class="kubeflow-link disabled">In Development</span>
+                    </div>
+                    <div class="kubeflow-card animate-on-scroll">
+                        <div class="kubeflow-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            </svg>
+                        </div>
+                        <h3>Notebooks</h3>
+                        <p class="kubeflow-status status-live">Live</p>
+                        <p>Jupyter workbench management with hardware profiles, connections, and lifecycle tracking.</p>
+                        <a href="https://github.com/kubeflow/kubeflow" class="kubeflow-link" target="_blank">View Repository</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RHOAI Features -->
+        <section class="section section-alt" id="rhoai-features">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Enabling RHOAI Features</h2>
+                <p class="section-subtitle animate-on-scroll">Full modular architecture modules powering core RHOAI capabilities</p>
+                <div class="integrations-grid">
+                    <div class="integration-card animate-on-scroll">
+                        <div class="integration-logo">
+                            <span class="integration-letter">G</span>
+                        </div>
+                        <h3>GenAI Studio</h3>
+                        <p>A dedicated workspace for AI engineers with <strong>full BFF implementation</strong>. Provides AI asset endpoints for deploying and managing models, along with a playground environment for generative AI experimentation. Functions as a command center for enterprise GenAI, empowering teams to build and test AI innovations.</p>
+                    </div>
+                    <div class="integration-card animate-on-scroll">
+                        <div class="integration-logo">
+                            <span class="integration-letter">M</span>
+                        </div>
+                        <h3>MaaS (Models as a Service)</h3>
+                        <p>Delivers AI models as shared resources with <strong>complete Go BFF</strong>. Provides API-based access through standardized endpoints, with built-in rate limiting and governance via Red Hat Connectivity Link. Supports tiered access (free, premium) with observability through Prometheus and Grafana dashboards.</p>
+                    </div>
+                    <div class="integration-card animate-on-scroll">
+                        <div class="integration-logo">
+                            <span class="integration-letter">R</span>
+                        </div>
+                        <h3>Model Registry</h3>
+                        <p>Complete UI for ML model versioning, metadata tracking, and lifecycle management with <strong>Go BFF</strong>. Enables teams to register, version, and manage ML models across the organization.</p>
+                    </div>
+                    <div class="integration-card animate-on-scroll">
+                        <div class="integration-logo">
+                            <span class="integration-letter">A</span>
+                        </div>
+                        <h3>AI Catalog</h3>
+                        <p>Curated model discovery platform with filters, performance benchmarks, and <strong>one-click deployment</strong>. Allows users to browse, compare, and deploy pre-built AI models.</p>
+                    </div>
+                    <div class="integration-card animate-on-scroll">
+                        <div class="integration-logo">
+                            <span class="integration-letter">A</span>
+                        </div>
+                        <h3>AutoML</h3>
+                        <p>Automated ML model generation with <strong>AutoGluon</strong> and Kubeflow Pipelines. Discovers optimal configurations, evaluates against test datasets, and generates deployable ML artifacts with Go BFF.</p>
+                    </div>
+                    <div class="integration-card animate-on-scroll">
+                        <div class="integration-logo">
+                            <span class="integration-letter">R</span>
+                        </div>
+                        <h3>AutoRAG</h3>
+                        <p>Automated RAG optimization using the <strong>ai4rag engine</strong>. Orchestrates experiments through Kubeflow Pipelines, evaluates configurations with quality metrics, and generates deployable RAG Patterns with Go BFF.</p>
+                    </div>
+                    <div class="integration-card animate-on-scroll">
+                        <div class="integration-logo">
+                            <span class="integration-letter">E</span>
+                        </div>
+                        <h3>Eval-Hub</h3>
+                        <p>UI for <strong>evaluation orchestration</strong> through the Evaluation Stack. Run cross-framework assessments with curated collections, monitor progress, and view MLflow-integrated results with Go BFF.</p>
+                    </div>
+                    <div class="integration-card animate-on-scroll">
+                        <div class="integration-logo">
+                            <span class="integration-letter">F</span>
+                        </div>
+                        <h3>MLflow BFF</h3>
+                        <p>Centralized integration service using <strong>mlflow-go SDK</strong>. Enables other BFFs to interact with MLflow instances for experiment tracking, prompt registry, and workspace isolation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- External Integrations -->
+        <section class="section section-accent" id="integrations">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">External Integrations</h2>
+                <p class="section-subtitle animate-on-scroll">Our modular architecture enables seamless third-party integration via proxy patterns</p>
+                <div class="integrations-grid">
+                    <div class="integration-card animate-on-scroll">
+                        <div class="integration-logo">
+                            <span class="integration-letter">P</span>
+                        </div>
+                        <h3>Perses</h3>
+                        <p>Integrated via <strong>proxy service architecture</strong> (no BFF). The observability package proxies to the data-science-perses Kubernetes service, rendering Perses dashboards natively within RHOAI for real-time metrics on model serving, GPU utilization, and inference latency.</p>
+                    </div>
+                    <div class="integration-card animate-on-scroll">
+                        <div class="integration-logo">
+                            <span class="integration-letter">M</span>
+                        </div>
+                        <h3>MLflow</h3>
+                        <p>Integrated via <strong>dedicated BFF + iframe embedding</strong>. The MLflow BFF uses <a href="https://github.com/opendatahub-io/mlflow-go" target="_blank">mlflow-go SDK</a> for programmatic access, enabling experiment tracking, prompt registry, and workspace isolation. Other BFFs (Eval-Hub, AutoML, AutoRAG) interact with MLflow through this service.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture Section -->
+        <section class="section" id="architecture">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Architecture Overview</h2>
+                <p class="section-subtitle animate-on-scroll">How our modular platform works</p>
+
+                <div class="architecture-diagram animate-on-scroll">
+                    <div class="arch-layer arch-host">
+                        <div class="arch-label">Host Dashboard</div>
+                        <div class="arch-description">RHOAI Dashboard orchestrates all modules</div>
+                    </div>
+                    <div class="arch-arrow"></div>
+                    <div class="arch-layer arch-modules">
+                        <div class="arch-label">Federated Modules (with BFF)</div>
+                        <div class="arch-modules-grid">
+                            <div class="arch-module" data-tooltip="Model versioning - has Go BFF">Model Registry</div>
+                            <div class="arch-module" data-tooltip="AI experimentation - has Go BFF">GenAI Studio</div>
+                            <div class="arch-module" data-tooltip="Models as a Service - has Go BFF">MaaS</div>
+                            <div class="arch-module" data-tooltip="Jupyter workbenches - has Go BFF">Notebooks 2.0</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow"></div>
+                    <div class="arch-layer arch-modules" style="background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%);">
+                        <div class="arch-label">RHOAI 3.4 Modules (Shipped)</div>
+                        <div class="arch-modules-grid">
+                            <div class="arch-module" data-tooltip="Automated ML model generation - Go BFF">AutoML</div>
+                            <div class="arch-module" data-tooltip="RAG optimization - Go BFF">AutoRAG</div>
+                            <div class="arch-module" data-tooltip="Evaluation orchestration - Go BFF">Eval-Hub</div>
+                            <div class="arch-module" data-tooltip="MLflow integration service - mlflow-go SDK">MLflow BFF</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow"></div>
+                    <div class="arch-layer arch-proxy">
+                        <div class="arch-label">External Integrations (Proxy-based)</div>
+                        <div class="arch-modules-grid">
+                            <div class="arch-module" data-tooltip="Observability - proxy to Perses service">Perses</div>
+                            <div class="arch-module" data-tooltip="Legacy experiment tracking - iframe/proxy">MLflow UI</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow"></div>
+                    <div class="arch-layer arch-k8s">
+                        <div class="arch-label">Kubernetes / OpenShift</div>
+                        <div class="arch-description">CRDs, operators, and platform resources</div>
+                    </div>
+                </div>
+
+                <div class="architecture-features">
+                    <div class="arch-feature animate-on-scroll">
+                        <h4>Module Federation</h4>
+                        <p>Webpack 5 feature enabling micro-frontends to share code at runtime</p>
+                    </div>
+                    <div class="arch-feature animate-on-scroll">
+                        <h4>Type-Safe Contracts</h4>
+                        <p>OpenAPI specs with generated TypeScript and Go code</p>
+                    </div>
+                    <div class="arch-feature animate-on-scroll">
+                        <h4>Flexible Integration</h4>
+                        <p>Full BFF for K8s access, or simple proxy for external tools</p>
+                    </div>
+                    <div class="arch-feature animate-on-scroll">
+                        <h4>AI-Ready Architecture</h4>
+                        <p>Ambient-compatible codebase with CLAUDE.md files and ADRs for agentic development</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="section section-alt" id="timeline">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Our Journey</h2>
+                <p class="section-subtitle animate-on-scroll">Key milestones in building the modular platform</p>
+
+                <div class="timeline">
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2024 Q3</div>
+                            <h3>Kubeflow Contribution Begins</h3>
+                            <p>Red Hat started contributing to Kubeflow, establishing our presence in the open source community.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2024 Q4</div>
+                            <h3>PatternFly MUI Theme Upstream</h3>
+                            <p>Championed the acceptance of PatternFly themed as MUI as a valid component library upstream in Kubeflow.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-badge">Kubeflow 1.10</span>
+                            <div class="timeline-date">2025 Q1</div>
+                            <h3>Model Registry Shipped to Kubeflow</h3>
+                            <p>Delivered complete Model Registry UI to Kubeflow with MUI theming layer, integrating as a native component in the Kubeflow Central Dashboard.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2025 Q2</div>
+                            <h3>Module Federation Adoption</h3>
+                            <p>Implemented Webpack Module Federation in ODH Dashboard, establishing the micro-frontend architecture.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2025 Q2</div>
+                            <h3>mod-arch-library v1.0</h3>
+                            <p>Released the shared library with core utilities, UI components, and theming for ODH, RHOAI, and Kubeflow.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2025 Q2</div>
+                            <h3>Turbo Monorepo Transformation</h3>
+                            <p>Converted to Turbo-powered monorepo with shared ESLint, TypeScript, and Jest configurations.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-badge">RHOAI 2.25</span>
+                            <div class="timeline-date">2025 Q3</div>
+                            <h3>Model Registry & Model Catalog in RHOAI</h3>
+                            <p>Onboarded both Model Registry and Model Catalog as the first modular architecture modules in RHOAI, proving the federated module pattern at scale.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2025 Q3</div>
+                            <h3>QE Infrastructure</h3>
+                            <p>Deployed GitHub Actions e2e pipeline, PR cluster infrastructure, nightly AI test analysis, and Bodies of Water release strategy.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-badge">RHOAI 3.0</span>
+                            <div class="timeline-date">2025 Q4</div>
+                            <h3>Gen AI Deployment</h3>
+                            <p>First full modular architecture module deployed to production with complete BFF implementation.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-badge">RHOAI 3.3</span>
+                            <div class="timeline-date">2026 Q1</div>
+                            <h3>MaaS (Models as a Service)</h3>
+                            <p>Delivered MaaS module with API-based access to AI models through standardized endpoints, with built-in rate limiting and governance.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-badge">RHOAI 3.4 EA1</span>
+                            <div class="timeline-date">2026 Q1</div>
+                            <h3>Perses Integration</h3>
+                            <p>Observability dashboards integrated via proxy service architecture for real-time ML workload monitoring.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-badge">RHOAI 3.4 EA1</span>
+                            <div class="timeline-date">2026 Q1</div>
+                            <h3>MLflow Integration</h3>
+                            <p>Integrated MLflow via iframe embedding with a brand new BFF SDK, enabling experiment tracking and ML lifecycle management within RHOAI Dashboard.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2026 Q1</div>
+                            <h3>Golang BFF SDK</h3>
+                            <p>New SDK for Golang enabling streamlined Backend for Frontend development across all modules.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2026 Q1</div>
+                            <h3>Agentic-Ready Monorepo</h3>
+                            <p>Prepared the monorepo for agentic development with comprehensive documentation, cursor rules, and AI-friendly code patterns enabling efficient AI-assisted development workflows.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-badge">RHOAI 3.4 GA</span>
+                            <div class="timeline-date">May 2026 (Shipped)</div>
+                            <h3>RHOAI 3.4 GA Release</h3>
+                            <p>Shipped four new federated modules to production: AutoML, AutoRAG, Eval-Hub, and MLflow BFF. All fully integrated with the modular architecture and Go BFF backends.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2026 Q1-Q2 (Completed)</div>
+                            <h3>AI Process & Tooling</h3>
+                            <p>Standardized AI-assisted development across the team: AI PR Reviews (Christian Vogt), AI Triage automation, Ambient Code Platform adoption, CLAUDE.md files and structured SDLC workflows across 25 packages. <a href="https://issues.redhat.com/browse/RHOAIENG-50135" target="_blank">RHOAIENG-50135</a></p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2026 Q2 (In Progress)</div>
+                            <h3>Main BFF Architecture (Stage 0)</h3>
+                            <p>Collaborating with the <strong>Pewter team</strong> to establish Stage 0 of the Main BFF — a unified backend-for-frontend layer for the host dashboard. This lays the foundation for migrating host-level API calls from the frontend to a centralized Go BFF.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2026 Q2 (In Progress)</div>
+                            <h3>Independent Pod Deployments</h3>
+                            <p>Modules deploying as separate Kubernetes deployments via CRD-based configuration, enabling independent scaling and lifecycle management. <a href="https://issues.redhat.com/browse/RHOAIENG-38191" target="_blank">RHOAIENG-38191</a></p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2026 Q2 (In Progress)</div>
+                            <h3>Quality Gates & Auto Dependencies</h3>
+                            <p>Automated quality checks as build gates for all modular architecture modules (Anthony Coughlin), and automated dependency update pipelines to reduce maintenance burden (Jenny Montrose). <a href="https://issues.redhat.com/browse/RHOAIENG-48869" target="_blank">RHOAIENG-48869</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Initiatives Section -->
+        <section class="section" id="initiatives">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Current Initiatives</h2>
+                <p class="section-subtitle animate-on-scroll">What we're working on now</p>
+
+                <div class="initiatives-grid">
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #8B5CF6;">
+                        <div class="initiative-status status-progress">In Progress</div>
+                        <h3>Main BFF Architecture (Stage 0)</h3>
+                        <p>Establishing the Main BFF with the Pewter team — a unified Go backend-for-frontend for the host dashboard, enabling migration of host-level API calls from frontend to a centralized backend.</p>
+                    </div>
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #8B5CF6;">
+                        <div class="initiative-status status-progress">In Progress</div>
+                        <h3>Independent Pod Deployments</h3>
+                        <p>CRD-based module deployment as separate Kubernetes pods with independent scaling and lifecycle management. <a href="https://issues.redhat.com/browse/RHOAIENG-38191" target="_blank">RHOAIENG-38191</a></p>
+                    </div>
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #10B981;">
+                        <div class="initiative-status status-progress">In Progress</div>
+                        <h3>Quality Gates Enforcement</h3>
+                        <p>Automated quality checks as build gates for all modular architecture modules — ensuring consistent standards across federated teams. <a href="https://issues.redhat.com/browse/RHOAIENG-48869" target="_blank">RHOAIENG-48869</a></p>
+                    </div>
+                    <div class="initiative-card animate-on-scroll">
+                        <div class="initiative-status status-progress">In Progress</div>
+                        <h3>Auto Dependency Updates</h3>
+                        <p>Automated dependency update pipelines reducing maintenance overhead and keeping all packages current. <a href="https://issues.redhat.com/browse/RHOAIENG-57870" target="_blank">RHOAIENG-57870</a></p>
+                    </div>
+                    <div class="initiative-card animate-on-scroll">
+                        <div class="initiative-status status-progress">In Progress</div>
+                        <h3>Nightly Build Analysis</h3>
+                        <p>Automated investigation and reporting on nightly build failures to catch regressions early. <a href="https://issues.redhat.com/browse/RHOAIENG-29257" target="_blank">RHOAIENG-29257</a></p>
+                    </div>
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #6B7280;">
+                        <div class="initiative-status status-completed">Completed</div>
+                        <h3>AI Process & Tooling</h3>
+                        <p>AI PR Reviews, AI Triage, Ambient Platform adoption, structured SDLC workflows — standardized across the team. <a href="https://issues.redhat.com/browse/RHOAIENG-50135" target="_blank">RHOAIENG-50135</a></p>
+                    </div>
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #6B7280;">
+                        <div class="initiative-status status-completed">Completed</div>
+                        <h3>RHOAI 3.4 Module Onboarding</h3>
+                        <p>Successfully shipped AutoML, AutoRAG, Eval-Hub, and MLflow BFF as federated modules — all in production since May 2026.</p>
+                    </div>
+                    <div class="initiative-card animate-on-scroll">
+                        <div class="initiative-status status-planned">Backlog</div>
+                        <h3>Module SDK & ESLint Governance</h3>
+                        <p>Standardized SDK for module development with shared ESLint rules enforced as a build step across all packages.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Value Section -->
+        <section class="section section-alt" id="value">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Strategic Value</h2>
+                <p class="section-subtitle animate-on-scroll">Why our platform matters</p>
+                <div class="value-grid">
+                    <div class="value-card animate-on-scroll">
+                        <h3>For Feature Teams</h3>
+                        <ul>
+                            <li>Ship independently without blocking other teams</li>
+                            <li>Own your module with full control over frontend and BFF</li>
+                            <li>Shared foundations with common utilities and configs</li>
+                            <li>Quality confidence with automated gates</li>
+                            <li>AI-assisted development with Ambient workflows</li>
+                        </ul>
+                    </div>
+                    <div class="value-card animate-on-scroll">
+                        <h3>For the Organization</h3>
+                        <ul>
+                            <li>Faster delivery with parallel development across 10+ teams</li>
+                            <li>Reduced risk with isolated deployments</li>
+                            <li>Community contribution via upstream-first approach</li>
+                            <li>Partner enablement via Module Federation</li>
+                            <li>Standardized AI tooling across 25 packages</li>
+                        </ul>
+                    </div>
+                    <div class="value-card animate-on-scroll">
+                        <h3>For Customers</h3>
+                        <ul>
+                            <li>Better UX with cohesive experience</li>
+                            <li>Faster features reaching production</li>
+                            <li>Reliability with graceful failure handling</li>
+                            <li>Built-in observability via Perses</li>
+                            <li>Advanced ML capabilities via AutoML, AutoRAG, Eval-Hub</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <span class="logo-icon">M</span>
+                        <span class="logo-text">Monarch Platform Team</span>
+                    </div>
+                    <div class="footer-links">
+                        <a href="https://github.com/opendatahub-io/odh-dashboard" target="_blank">GitHub</a>
+                        <a href="https://github.com/opendatahub-io/mod-arch-library" target="_blank">mod-arch-library</a>
+                        <a href="https://github.com/kubeflow/model-registry" target="_blank">Model Registry</a>
+                        <a href="https://github.com/ambient-code" target="_blank">Ambient Code</a>
+                        <a href="https://issues.redhat.com/browse/RHOAIENG-51627" target="_blank">AI-Readiness</a>
+                    </div>
+                    <div class="footer-contact">
+                        <p>Slack: #wg-dashboard-monarch</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>Red Hat OpenShift AI</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
