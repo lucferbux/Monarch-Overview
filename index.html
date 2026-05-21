@@ -186,8 +186,8 @@
                         <div class="hero-stat-label">Modules Shipped (3.4)</div>
                     </div>
                     <div class="hero-stat">
-                        <div class="hero-stat-value">113+</div>
-                        <div class="hero-stat-label">Story Points (3.5)</div>
+                        <div class="hero-stat-value">4</div>
+                        <div class="hero-stat-label">Initiatives (3.5)</div>
                     </div>
                 </div>
             </div>
@@ -733,7 +733,7 @@
                         <h3>Operator Module Onboarding</h3>
                         <p>Dashboard transitions from a component managed by the central ODH Operator to a <strong>standalone operator module</strong> with its own Kubernetes controller and Custom Resource Definition. Manifest changes deploy same-day through Dashboard CI/CD instead of waiting 1-2 weeks for operator release cycles. The operator self-heals — configuration drift is auto-corrected.</p>
                         <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
-                            <span style="background: #E8F0FE; color: #0066CC; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">44 story points</span>
+                            <span style="background: #E8F0FE; color: #0066CC; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">11 issues</span>
                             <a href="https://issues.redhat.com/browse/RHOAIENG-47771" target="_blank" style="background: #F3F4F6; color: #6B7280; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; text-decoration: none;">RHOAIENG-47771</a>
                         </div>
                     </div>
@@ -742,16 +742,16 @@
                         <h3>Independent Pod Deployments</h3>
                         <p>Each module backend moves from a shared pod (8 containers, coupled fate) to its <strong>own independent deployment</strong> with dedicated scaling, permissions, and failure isolation. A crash in one module no longer takes down the entire Dashboard. Each module scales based on its own load and gets least-privilege security permissions.</p>
                         <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
-                            <span style="background: #E8F0FE; color: #0066CC; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">45 story points</span>
+                            <span style="background: #E8F0FE; color: #0066CC; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">~12 issues</span>
                             <a href="https://issues.redhat.com/browse/RHOAIENG-58968" target="_blank" style="background: #F3F4F6; color: #6B7280; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; text-decoration: none;">RHOAIENG-58968</a>
                         </div>
                     </div>
                     <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #8B5CF6;">
                         <div class="initiative-status status-progress">In Progress</div>
                         <h3>Go BFF Foundation (Phase 0)</h3>
-                        <p>A common Go backend-for-frontend is being co-built with <strong>Pewter and Crimson teams</strong>. Delivers shared authentication, Kubernetes client infrastructure, and security middleware. This begins the migration from Fastify (Node.js) to unified Go — 57 stories, ~213 points total across 8 phases.</p>
+                        <p>A common Go backend-for-frontend is being co-built with <strong>Pewter and Crimson teams</strong>. Delivers shared authentication, Kubernetes client infrastructure, and security middleware. This begins the migration from Fastify (Node.js) to unified Go — 57 stories across 8 phases.</p>
                         <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
-                            <span style="background: #EDE9FE; color: #8B5CF6; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">24 story points</span>
+                            <span style="background: #EDE9FE; color: #8B5CF6; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">8 issues</span>
                             <span style="background: #FEF3C7; color: #92400E; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">Multi-team</span>
                             <a href="https://issues.redhat.com/browse/RHOAIENG-60028" target="_blank" style="background: #F3F4F6; color: #6B7280; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; text-decoration: none;">RHOAIENG-60028</a>
                         </div>
@@ -856,7 +856,7 @@
                                 <span class="timeline-badge">RHOAI 3.5 EA1</span>
                                 <div class="timeline-date">June 16, 2026</div>
                                 <h3>Conditional Module Enablement</h3>
-                                <p>Modules can be individually enabled/disabled at runtime based on feature flags and DSC components. 22 story points.</p>
+                                <p>Modules can be individually enabled/disabled at runtime based on feature flags and DSC components.</p>
                             </div>
                         </div>
                         <div class="timeline-item animate-on-scroll">
@@ -865,7 +865,7 @@
                                 <span class="timeline-badge">RHOAI 3.5 EA2</span>
                                 <div class="timeline-date">July 14, 2026</div>
                                 <h3>Operator Integration + CRD</h3>
-                                <p>Dashboard Module Operator managing current topology with full CRD design, Go controller, and handler registration. 28 story points.</p>
+                                <p>Dashboard Module Operator managing current topology with full CRD design, Go controller, and handler registration.</p>
                             </div>
                         </div>
                         <div class="timeline-item animate-on-scroll">
@@ -874,7 +874,7 @@
                                 <span class="timeline-badge">RHOAI 3.5 GA</span>
                                 <div class="timeline-date">August 25, 2026</div>
                                 <h3>Independent Pods + Migration</h3>
-                                <p>All 7 BFF modules in their own deployments with independent lifecycle. Zero-downtime migration from operator-managed to module-managed. 61 story points.</p>
+                                <p>All 7 BFF modules in their own deployments with independent lifecycle. Zero-downtime migration from operator-managed to module-managed.</p>
                             </div>
                         </div>
                     </div>
