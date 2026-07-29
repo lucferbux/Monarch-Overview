@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Monarch Platform Team - Building the Foundation for Red Hat OpenShift AI">
+    <meta name="description" content="Dashboard Platform Team - Building the Foundation for Red Hat OpenShift AI">
     <meta name="theme-color" content="#0066CC">
-    <title>Monarch Platform Team | RHOAI Dashboard</title>
+    <title>Dashboard Platform Team | RHOAI Dashboard</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -19,8 +19,8 @@
                     <line x1="3" y1="18" x2="21" y2="18"></line>
                 </svg>
             </button>
-            <div class="masthead-logo">M</div>
-            <span class="masthead-title">Monarch Platform Team</span>
+            <div class="masthead-logo">P</div>
+            <span class="masthead-title">Dashboard Platform Team</span>
         </div>
         <div class="masthead-actions">
             <a href="https://github.com/opendatahub-io/odh-dashboard" class="masthead-link" target="_blank">
@@ -182,8 +182,8 @@
                         <div class="hero-stat-label">Kubeflow Projects</div>
                     </div>
                     <div class="hero-stat">
-                        <div class="hero-stat-value">4</div>
-                        <div class="hero-stat-label">Modules Shipped (3.4)</div>
+                        <div class="hero-stat-value">5</div>
+                        <div class="hero-stat-label">Modules Shipped (3.5)</div>
                     </div>
                     <div class="hero-stat">
                         <div class="hero-stat-value">4</div>
@@ -196,7 +196,7 @@
         <!-- About Section -->
         <section class="section" id="about">
             <div class="container">
-                <h2 class="section-title animate-on-scroll">What is Monarch?</h2>
+                <h2 class="section-title animate-on-scroll">What is Dashboard Platform?</h2>
                 <p class="section-subtitle animate-on-scroll">The Platform Engineering team within Red Hat OpenShift AI Dashboard</p>
                 <div class="about-grid">
                     <div class="about-card animate-on-scroll">
@@ -456,6 +456,13 @@
                         <h3>MLflow BFF</h3>
                         <p>Centralized integration service using <strong>mlflow-go SDK</strong>. Enables other BFFs to interact with MLflow instances for experiment tracking, prompt registry, and workspace isolation.</p>
                     </div>
+                    <div class="integration-card animate-on-scroll">
+                        <div class="integration-logo">
+                            <span class="integration-letter">A</span>
+                        </div>
+                        <h3>Agent Ops</h3>
+                        <p>Visual interface for managing <strong>AI agent deployments</strong> on Kubernetes. Monitor, start, stop, and inspect deployed agent runtimes (Sandbox CRs) without CLI access. Full Go BFF with contract-first OpenAPI design.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -507,12 +514,13 @@
                     </div>
                     <div class="arch-arrow"></div>
                     <div class="arch-layer arch-modules" style="background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%);">
-                        <div class="arch-label">RHOAI 3.4 Modules (Shipped)</div>
+                        <div class="arch-label">RHOAI 3.4+ Modules (Shipped)</div>
                         <div class="arch-modules-grid">
                             <div class="arch-module" data-tooltip="Automated ML model generation - Go BFF">AutoML</div>
                             <div class="arch-module" data-tooltip="RAG optimization - Go BFF">AutoRAG</div>
                             <div class="arch-module" data-tooltip="Evaluation orchestration - Go BFF">Eval-Hub</div>
                             <div class="arch-module" data-tooltip="MLflow integration service - mlflow-go SDK">MLflow BFF</div>
+                            <div class="arch-module" data-tooltip="AI agent deployment management - Go BFF">Agent Ops</div>
                         </div>
                     </div>
                     <div class="arch-arrow"></div>
@@ -704,9 +712,10 @@
                     <div class="timeline-item animate-on-scroll">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
-                            <div class="timeline-date">2026 Q2 (In Progress)</div>
-                            <h3>Independent Pod Deployments</h3>
-                            <p>Modules deploying as separate Kubernetes deployments via CRD-based configuration, enabling independent scaling and lifecycle management. <a href="https://issues.redhat.com/browse/RHOAIENG-38191" target="_blank">RHOAIENG-38191</a></p>
+                            <span class="timeline-badge">RHOAI 3.5 GA</span>
+                            <div class="timeline-date">July 2026 (Delivered)</div>
+                            <h3>Dashboard Module Controller &amp; Independent Pod Deployments</h3>
+                            <p>The Dashboard now runs its own standalone Kubernetes operator and every module backend deploys as an independent pod. Full lifecycle ownership, fault isolation, and per-module scaling — the biggest architectural shift since the project started. <a href="https://issues.redhat.com/browse/RHOAIENG-60566" target="_blank">RHOAIENG-60566</a> / <a href="https://issues.redhat.com/browse/RHOAIENG-38191" target="_blank">RHOAIENG-38191</a></p>
                         </div>
                     </div>
                     <div class="timeline-item animate-on-scroll">
@@ -724,26 +733,26 @@
         <!-- RHOAI 3.5 Section -->
         <section class="section" id="rhoai-35">
             <div class="container">
-                <h2 class="section-title animate-on-scroll">RHOAI 3.5: What's Next</h2>
-                <p class="section-subtitle animate-on-scroll">From modular modules to deployment independence — five coordinated initiatives transforming how the Dashboard deploys, scales, and evolves</p>
+                <h2 class="section-title animate-on-scroll">RHOAI 3.5: Delivered</h2>
+                <p class="section-subtitle animate-on-scroll">From modular modules to deployment independence — coordinated initiatives transforming how the Dashboard deploys, scales, and evolves</p>
 
                 <div class="initiatives-grid">
-                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #0066CC;">
-                        <div class="initiative-status status-progress">In Progress</div>
-                        <h3>Operator Module Onboarding</h3>
-                        <p>Dashboard transitions from a component managed by the central ODH Operator to a <strong>standalone operator module</strong> with its own Kubernetes controller and Custom Resource Definition. Manifest changes deploy same-day through Dashboard CI/CD instead of waiting 1-2 weeks for operator release cycles. The operator self-heals — configuration drift is auto-corrected.</p>
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #6B7280;">
+                        <div class="initiative-status status-completed">Delivered</div>
+                        <h3>Dashboard Module Controller</h3>
+                        <p>The Dashboard now runs its own <strong>standalone Kubernetes operator</strong> with a Custom Resource Definition. Manifest changes deploy same-day through Dashboard CI/CD instead of waiting 1-2 weeks for operator release cycles. The operator self-heals — configuration drift is auto-corrected. Shipped in RHOAI 3.5 GA.</p>
                         <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
-                            <span style="background: #E8F0FE; color: #0066CC; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">11 issues</span>
-                            <a href="https://issues.redhat.com/browse/RHOAIENG-47771" target="_blank" style="background: #F3F4F6; color: #6B7280; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; text-decoration: none;">RHOAIENG-47771</a>
+                            <span style="background: #D1FAE5; color: #065F46; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">33 issues closed</span>
+                            <a href="https://issues.redhat.com/browse/RHOAIENG-60566" target="_blank" style="background: #F3F4F6; color: #6B7280; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; text-decoration: none;">RHOAIENG-60566</a>
                         </div>
                     </div>
-                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #0066CC;">
-                        <div class="initiative-status status-progress">In Progress</div>
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #6B7280;">
+                        <div class="initiative-status status-completed">Delivered</div>
                         <h3>Independent Pod Deployments</h3>
-                        <p>Each module backend moves from a shared pod (8 containers, coupled fate) to its <strong>own independent deployment</strong> with dedicated scaling, permissions, and failure isolation. A crash in one module no longer takes down the entire Dashboard. Each module scales based on its own load and gets least-privilege security permissions.</p>
+                        <p>Each module backend now runs in its <strong>own independent deployment</strong> with dedicated scaling, permissions, and failure isolation. A crash in one module no longer takes down the entire Dashboard. Each module scales based on its own load and gets least-privilege security permissions. Shipped in RHOAI 3.5 GA.</p>
                         <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
-                            <span style="background: #E8F0FE; color: #0066CC; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">~12 issues</span>
-                            <a href="https://issues.redhat.com/browse/RHOAIENG-58968" target="_blank" style="background: #F3F4F6; color: #6B7280; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; text-decoration: none;">RHOAIENG-58968</a>
+                            <span style="background: #D1FAE5; color: #065F46; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">10 modules deployed</span>
+                            <a href="https://issues.redhat.com/browse/RHOAIENG-38191" target="_blank" style="background: #F3F4F6; color: #6B7280; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; text-decoration: none;">RHOAIENG-38191</a>
                         </div>
                     </div>
                     <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #8B5CF6;">
@@ -758,10 +767,10 @@
                     </div>
                     <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #6B7280;">
                         <div class="initiative-status status-completed">Delivered</div>
-                        <h3>AI-Automated Module Onboarding</h3>
-                        <p>Four Claude Code skills that compress module onboarding from <strong>5 working days to ~4 hours</strong>. Scaffolding, Dockerfiles, Tekton pipelines, DevOps Jira tickets, manifest overlays, and OpenShift CI — all automated with built-in validation. Integrates with DevOps' own AI-driven pipeline. Any engineer on any team can onboard a module by running four commands.</p>
+                        <h3>AI-Automated Module &amp; Konflux Onboarding</h3>
+                        <p>Claude Code skills that compress module onboarding from <strong>5 working days to ~4 hours</strong>. The <strong>/module-onboarding</strong> skill scaffolds a new federated module end-to-end (frontend, BFF, port allocation, host registration, build verification). The <strong>/konflux-onboarding</strong> skill handles the full CI/CD pipeline setup: Jira epic cloning, Dockerfiles, Tekton pipelines, manifest overlays, and OpenShift CI across upstream and downstream. Any engineer on any team can onboard a module and its build pipeline by running two commands.</p>
                         <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
-                            <span style="background: #D1FAE5; color: #065F46; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">4 skills</span>
+                            <span style="background: #D1FAE5; color: #065F46; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">6 skills</span>
                             <span style="background: #D1FAE5; color: #065F46; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">6 modules onboarded</span>
                             <a href="https://issues.redhat.com/browse/RHOAIENG-37060" target="_blank" style="background: #F3F4F6; color: #6B7280; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; text-decoration: none;">RHOAIENG-37060</a>
                         </div>
@@ -815,7 +824,7 @@
                                 </svg>
                             </div>
                             <h3>Component Onboarding</h3>
-                            <p>External teams can onboard new modules without waiting on Monarch. The operator and CRD handle deployment, scaling, and lifecycle automatically.</p>
+                            <p>External teams can onboard new modules without waiting on the Platform team. The operator and CRD handle deployment, scaling, and lifecycle automatically.</p>
                         </div>
                         <div class="about-card animate-on-scroll">
                             <div class="about-icon">
@@ -946,10 +955,10 @@
                         <h3>Main BFF Architecture (Stage 0)</h3>
                         <p>Establishing the Main BFF with the Pewter team — a unified Go backend-for-frontend for the host dashboard, enabling migration of host-level API calls from frontend to a centralized backend.</p>
                     </div>
-                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #8B5CF6;">
-                        <div class="initiative-status status-progress">In Progress</div>
-                        <h3>Independent Pod Deployments</h3>
-                        <p>CRD-based module deployment as separate Kubernetes pods with independent scaling and lifecycle management. <a href="https://issues.redhat.com/browse/RHOAIENG-38191" target="_blank">RHOAIENG-38191</a></p>
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #6B7280;">
+                        <div class="initiative-status status-completed">Completed</div>
+                        <h3>Dashboard Operator &amp; Independent Pods</h3>
+                        <p>Standalone Kubernetes operator and independent pod deployments for all modules — delivered in RHOAI 3.5 GA. <a href="https://issues.redhat.com/browse/RHOAIENG-60566" target="_blank">RHOAIENG-60566</a> / <a href="https://issues.redhat.com/browse/RHOAIENG-38191" target="_blank">RHOAIENG-38191</a></p>
                     </div>
                     <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #10B981;">
                         <div class="initiative-status status-progress">In Progress</div>
@@ -973,8 +982,8 @@
                     </div>
                     <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #6B7280;">
                         <div class="initiative-status status-completed">Completed</div>
-                        <h3>AI-Automated Module Onboarding</h3>
-                        <p>4 Claude Code skills compressing module onboarding from 5 working days to ~4 hours. Any engineer can onboard a module without specialist knowledge. <a href="https://issues.redhat.com/browse/RHOAIENG-37060" target="_blank">RHOAIENG-37060</a></p>
+                        <h3>AI-Automated Module &amp; Konflux Onboarding</h3>
+                        <p>Claude Code skills for module scaffolding (/module-onboarding) and full Konflux CI/CD pipeline setup (/konflux-onboarding) — compressing onboarding from 5 working days to ~4 hours. <a href="https://issues.redhat.com/browse/RHOAIENG-37060" target="_blank">RHOAIENG-37060</a></p>
                     </div>
                     <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #6B7280;">
                         <div class="initiative-status status-completed">Completed</div>
@@ -1036,7 +1045,7 @@
                 <div class="footer-content">
                     <div class="footer-brand">
                         <span class="logo-icon">M</span>
-                        <span class="logo-text">Monarch Platform Team</span>
+                        <span class="logo-text">Dashboard Platform Team</span>
                     </div>
                     <div class="footer-links">
                         <a href="https://github.com/opendatahub-io/odh-dashboard" target="_blank">GitHub</a>
@@ -1046,7 +1055,7 @@
                         <a href="https://issues.redhat.com/browse/RHOAIENG-51627" target="_blank">AI-Readiness</a>
                     </div>
                     <div class="footer-contact">
-                        <p>Slack: #wg-dashboard-monarch</p>
+                        <p>Slack: #wg-dashboard-platform</p>
                     </div>
                 </div>
                 <div class="footer-bottom">

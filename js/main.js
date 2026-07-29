@@ -1,5 +1,5 @@
 /**
- * Monarch Overview - Interactive Features
+ * Dashboard Platform Overview - Interactive Features
  * Vanilla JavaScript for GitHub Pages compatibility
  */
 
@@ -375,7 +375,7 @@
         initSidebarToggle();
 
         // Log initialization
-        console.log('Monarch Overview initialized');
+        console.log('Dashboard Platform Overview initialized');
     }
 
     // Start
