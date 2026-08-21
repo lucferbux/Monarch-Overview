@@ -151,7 +151,7 @@
     // Architecture Module Tooltips
     // ============================================
     function initTooltips() {
-        const modules = document.querySelectorAll('.arch-module[data-tooltip]');
+        const modules = document.querySelectorAll('.arch-module[data-tooltip], .arch-container[data-tooltip]');
 
         modules.forEach(module => {
             const tooltip = document.createElement('div');
@@ -364,6 +364,28 @@
         }
     }
 
+    // ============================================
+    // Release Tab Switching
+    // ============================================
+    function initReleaseTabs() {
+        const tabs = document.querySelectorAll('.release-tab');
+        const contents = document.querySelectorAll('.release-content');
+
+        tabs.forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                if (tab.disabled) return;
+                var release = tab.getAttribute('data-release');
+
+                tabs.forEach(function(t) { t.classList.remove('active'); });
+                tab.classList.add('active');
+
+                contents.forEach(function(c) {
+                    c.style.display = c.getAttribute('data-release') === release ? 'block' : 'none';
+                });
+            });
+        });
+    }
+
     function initAll() {
         initScrollAnimations();
         initSmoothScroll();
@@ -373,6 +395,7 @@
         initCardEffects();
         initLazyLoading();
         initSidebarToggle();
+        initReleaseTabs();
 
         // Log initialization
         console.log('Dashboard Platform Overview initialized');
